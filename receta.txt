@@ -1,0 +1,16 @@
+Para la clasificación de caras se ocupa la librería OpenCV para la detección de caras, y el framework Pytho facerec para su clasificación, y también basado en OpenCV
+
+Lo importante es que todas las imagenes para las caras que sean del mismo tamaño. Los scripts existentes ya se preocupan de redimensionarlos en caso de que difieran del tamaño por default, o ingresado por el usuario.
+
+Sean tanto caras extraidas de fotogramas manualmente o a partir de extractor-caras.py, lo importante es que exista un directorio cuyos subdirectorios hagan de clase (persona), con las imagenes en cada subdirectorio sindeo la de cada persona y conteniendo solo la cara adecuada
+
+Ya dado el subdirectorio, clasificador-caras.py con el comando -t se encarga de leer el directorio y construir el modelo, además de hacer la validación.
+El resultado es un archivo .pkl (Python Pickle) conteniendo el modelo del clasificaor en si y metadata conteniendo el nombre de cada clase y las dimension de las caras. -d puede ser usado para cambiar esta dimensión al entrenar
+
+Clasificar caras se hace en vez con el comando -c, siendo posible ingresar multiples imagenes y retornando la clase (persona) que sea la mas común entre estas
+
+Tanto extractor-caras.py como la función de clasificación de caras detectan en lo posible la cara mas cercana al centro en un fotograma, reintentando con caras mas pequeñas y menos nítidas si no encuentra caras o solo encuentra caras demasiado cerca del borde
+
+Extractor-caras.py se encarga de convertir un directorio de fotogramas ya clasificado a otro directorio conteniendo solo las caras,  igualmente clasificado para funciones de entrenamiento.
+
+Paquetes.txt conteiene los paquetes python usados. facerec debe ser instalado manualmente, PIL es deprecado pero ya reemplazado

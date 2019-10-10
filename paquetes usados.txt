@@ -1,0 +1,13 @@
+pip
+pil
+numpy
+scipy
+matplotlib
+pillow (?)
+
+
+sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+
+sudo apt-get install libfreetype6-dev libpng-dev
+
+sudo apt-get install python-opencv
